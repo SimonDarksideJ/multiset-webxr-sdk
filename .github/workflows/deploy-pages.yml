@@ -5,7 +5,7 @@
 # * GitHub pages enabled for a repository
 # * Secrets defined for CLIENT_ID, CLIENT_SECRET, CURRENT_MAP_TYPE, and MAP_CODE
 #
-# See Multi-Set developer portal for Credentials and Map Details
+# See MultiSet developer portal for Credentials and Map Details
 # https://developer.multiset.ai/
 
 name: Deploy NPM Site with GitHub Pages dependencies preinstalled
@@ -45,10 +45,10 @@ jobs:
       
       - name: Update config with secrets
         run: |
-          sed -i 's/YOUR_CLIENT_ID/${{ secrets.CLIENT_ID }}/g' src/config.ts
-          sed -i 's/YOUR_CLIENT_SECRET/${{ secrets.CLIENT_SECRET }}/g' src/config.ts
-          sed -i 's/YOUR_MAP_TYPE/${{ secrets.CURRENT_MAP_TYPE }}/g' src/config.ts
-          sed -i 's/YOUR_MAP_CODE/${{ secrets.MAP_CODE }}/g' src/config.ts
+          sed -i 's|YOUR_CLIENT_ID|${{ secrets.CLIENT_ID }}|g' src/config.ts
+          sed -i 's|YOUR_CLIENT_SECRET|${{ secrets.CLIENT_SECRET }}|g' src/config.ts
+          sed -i 's|YOUR_MAP_TYPE|${{ secrets.CURRENT_MAP_TYPE }}|g' src/config.ts
+          sed -i 's|YOUR_MAP_CODE|${{ secrets.MAP_CODE }}|g' src/config.ts
       
       - name: Install dependencies
         run: npm install
